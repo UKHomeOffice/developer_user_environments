@@ -5,7 +5,7 @@ fi
 
 if [ "`nvm --version`" == '' ]; then
     echo Loading config
-    export NVM_DIR="/home/krupag/.nvm"
+    export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 fi
 
@@ -26,6 +26,6 @@ if [ "`grunt --version`" != 'grunt-cli v1.2.0' ]; then
 fi
 
 echo Close and reopen your terminal to start using nvm or run the following to use it now:
-echo export NVM_DIR="/home/krupag/.nvm"
+echo export NVM_DIR="$HOME/.nvm"
 echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm'
 
