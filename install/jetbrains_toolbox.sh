@@ -29,5 +29,5 @@ if [ ! -x "$OUTDIR/jetbrains-toolbox-$VERSION" ]; then
     $OUTDIR/latest/jetbrains-toolbox &
 else
     echo "JetBrains Toolbox $VERSION is already installed"
-    echo "To remove it, run rm -rf $OUTDIR/jetbrains-toolbox-$VERSION"
+    echo "To remove it and re-install run rm -rf $OUTDIR/jetbrains-toolbox-$VERSION"
 fi
