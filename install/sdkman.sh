@@ -14,5 +14,5 @@ sdk install maven 3.3.9
 sdk flush candidates
 
 echo Please open a new terminal, or run the following in the existing one:
-echo source "/home/krupag/.sdkman/bin/sdkman-init.sh"
+echo source "$HOME/.sdkman/bin/sdkman-init.sh"
 
