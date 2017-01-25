@@ -8,7 +8,7 @@ else
 fi
 
 sdk install groovy 2.4.7
-sdk install grails 3.2.4
+sdk install gradle 3.3
 sdk install maven 3.3.9
 
 sdk flush candidates
