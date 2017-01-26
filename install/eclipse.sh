@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Installer for JetBrains Toolbox
 # This will allow the installation, upgrade and management of other JetBrains tools
