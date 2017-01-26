@@ -1,4 +1,6 @@
 #!/bin/bash
+set -euo pipefail
+
 if [ -x "$HOME/.sdkman" ]; then
     source "$HOME/.sdkman/bin/sdkman-init.sh"
     sdk selfupdate
