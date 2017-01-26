@@ -35,6 +35,7 @@ if [ ! -x "$OUTDIR/java-neon" ]; then
         echo "Terminal=false" >> $ICONFILE
     else
         echo "Invalid checksum for tarball.  Aborting."
+        exit 1
     fi
 
     rm -r $TMPDIR
@@ -43,3 +44,4 @@ else
     echo "To remove it and re-install run rm -rf $OUTDIR/java-neon"
 fi
 
+exit 0

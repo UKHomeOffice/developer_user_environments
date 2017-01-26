@@ -31,3 +31,4 @@ echo Close and reopen your terminal to start using nvm or run the following to u
 echo export NVM_DIR="$HOME/.nvm"
 echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm'
 
+exit 0

@@ -18,3 +18,4 @@ sdk flush candidates
 echo Please open a new terminal, or run the following in the existing one:
 echo source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+exit 0

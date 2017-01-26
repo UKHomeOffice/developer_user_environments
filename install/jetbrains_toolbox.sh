@@ -23,6 +23,7 @@ if [ ! -x "$OUTDIR/jetbrains-toolbox-$VERSION" ]; then
         ln -s $OUTDIR/jetbrains-toolbox-$VERSION $OUTDIR/latest
     else
         echo "Invalid checksum for tarball.  Aborting."
+        exit 1
     fi
 
     rm -r $TMPDIR
@@ -32,3 +33,5 @@ else
     echo "JetBrains Toolbox $VERSION is already installed"
     echo "To remove it and re-install run rm -rf $OUTDIR/jetbrains-toolbox-$VERSION"
 fi
+
+exit 0
