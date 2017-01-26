@@ -6,8 +6,8 @@ set -euo pipefail
 # Running the tool itself will automatically add an icon to the launcher
 
 VERSION=1.1.2143
-TMPDIR=~/tools/tmp
-OUTDIR=~/tools/jetbrains
+TMPDIR=$HOME/tools/tmp
+OUTDIR=$HOME/tools/jetbrains
 CHECKSUM="74ca89a1b97367e909075e53c67ee093ca316ecb8124bb39e7318750634552a3"
 
 if [ ! -x "$OUTDIR/jetbrains-toolbox-$VERSION" ]; then

@@ -5,10 +5,10 @@ set -euo pipefail
 # This will allow the installation, upgrade and management of other JetBrains tools
 # Running the tool itself will automatically add an icon to the launcher
 
-TMPDIR=~/tools/tmp
-OUTDIR=~/tools/eclipse
+TMPDIR=$HOME/tools/tmp
+OUTDIR=$HOME/tools/eclipse
 CHECKSUM="7cd7c5a020bb4a8644fdaa1b4e3b1b9daab34edd17677e28b2cdd7934f2a6432320fbba241e4fb91349ae056405721522e4bfe29970a3934d49a3e8385558691"
-ICONFILE=~/.local/share/applications/eclipse.desktop
+ICONFILE=$HOME/.local/share/applications/eclipse.desktop
 
 if [ ! -x "$OUTDIR/java-neon" ]; then
 
