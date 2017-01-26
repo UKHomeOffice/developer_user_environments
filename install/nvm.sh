@@ -8,13 +8,17 @@ fi
 if [ "$(nvm --version)" == '' ]; then
     echo Loading config
     export NVM_DIR="$HOME/.nvm"
+    set +eu
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    set -eu
 fi
 
 if [ "$(node --version)" != 'v6.9.4' ]; then
     echo Installing NodeJS
+    set +u
     nvm install v6.9.4
     nvm use v6.9.4
+    set -u
 fi
 
 if [ "$(bower --version)" != '1.8.0' ]; then
