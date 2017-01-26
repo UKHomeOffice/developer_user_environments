@@ -15,7 +15,7 @@ if [ ! -x "$OUTDIR/jetbrains-toolbox-$VERSION" ]; then
 
     curl -L https://download.jetbrains.com/toolbox/jetbrains-toolbox-${VERSION}.tar.gz -o $TMPDIR/jetbrains-toolbox.tar.gz
 
-    if [ "`sha256sum $TMPDIR/jetbrains-toolbox.tar.gz`" == "$CHECKSUM  $TMPDIR/jetbrains-toolbox.tar.gz" ]; then
+    if [ "$(sha256sum $TMPDIR/jetbrains-toolbox.tar.gz)" == "$CHECKSUM  $TMPDIR/jetbrains-toolbox.tar.gz" ]; then
         mkdir -p $OUTDIR
         cd $OUTDIR
         tar xvzf $TMPDIR/jetbrains-toolbox.tar.gz

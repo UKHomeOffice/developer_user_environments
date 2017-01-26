@@ -16,7 +16,7 @@ if [ ! -x "$OUTDIR/java-neon" ]; then
     mkdir -p $TMPDIR
 
     curl -L http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/neon/2/eclipse-java-neon-2-linux-gtk-x86_64.tar.gz -o $TMPDIR/eclipse.tar.gz
-    if [ "`sha512sum $TMPDIR/eclipse.tar.gz`" == "$CHECKSUM  $TMPDIR/eclipse.tar.gz" ]; then
+    if [ "$(sha512sum $TMPDIR/eclipse.tar.gz)" == "$CHECKSUM  $TMPDIR/eclipse.tar.gz" ]; then
         cd $OUTDIR
         rm -rf $OUTDIR/eclipse
         tar xvzf $TMPDIR/eclipse.tar.gz
