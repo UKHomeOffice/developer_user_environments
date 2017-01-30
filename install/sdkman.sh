@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
+GROOVY_VERSION=2.4.7
+GRADLE_VERSION=3.3
+MAVEN_VERSION=3.3.9
+
 if [ -x "$HOME/.sdkman" ]; then
     # SDKMAN doesn't play well in strict mode
     set +eu
@@ -16,9 +20,9 @@ fi
 
 # SDKMAN doesn't play well in strict mode
 set +eu
-sdk install groovy 2.4.7
-sdk install gradle 3.3
-sdk install maven 3.3.9
+sdk install groovy ${GROOVY_VERSION}
+sdk install gradle ${GRADLE_VERSION}
+sdk install maven ${MAVEN_VERSION}
 sdk flush candidates
 set -eu
 
