@@ -101,3 +101,6 @@ if [ -f "${HOME}/.gpg-agent-info" ]; then
        export SSH_AUTH_SOCK
        export SSH_AGENT_PID
 fi
+
+export DRONE_SERVER=https://drone.server.example
+export DRONE_TOKEN=123_your_token
