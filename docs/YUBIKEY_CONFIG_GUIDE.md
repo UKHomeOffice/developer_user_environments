@@ -1,7 +1,7 @@
 # Yubikey - GPG and SSH Key Configuration Guidelines
 
 ## Preamble 
-This is the configuration guidelines for deploying GPG and SSH keys on a Yubikey. It has been validated on [secure development environment - Ubuntu v16.04][https://github.com/UKorg/development_environment]. The guidelines are for Yubikey 4 as it supports 4096 bit key length.  
+This is the configuration guidelines for deploying GPG and SSH keys on a Yubikey. It has been validated on [secure development environment - Ubuntu v16.04](https://github.com/UKorg/development_environment). The guidelines are for Yubikey 4 as it supports 4096 bit key length.  
 
 ## Prerequisites
 For this procedure to work it requires GnuPG version 2.0.22 or later (this is currently included in the secure development environment). 
@@ -457,12 +457,12 @@ $curl https://keybase.io/<username>/<pgppubickey> | gpg2 --import
 ```
 
 ##GPG Config File
-Edit the gpg config file with the settings specified in the github [developer user environments][https://github.com/UKorg/developer_user_environments/blob/dotfiles/.gnupg/gpg.conf]
+Edit the gpg config file with the settings specified in the github [developer user environments](https://github.com/UKorg/developer_user_environments/blob/dotfiles/.gnupg/gpg.conf)
 
 __Note the default key is the long version to avoid collision errors (under general key info, remove 0x).__
 
 ##GPG Agent File
-Created the gpg agent config file with the settings specified in the github [developer user environments][https://github.com/UKorg/developer_user_environments/blob/dotfiles/.gnupg/gpg-agent.conf)]
+Created the gpg agent config file with the settings specified in the github [developer user environments](https://github.com/UKorg/developer_user_environments/blob/dotfiles/.gnupg/gpg-agent.conf)
 
 ##Update bashrc;
 Update the bashrc to bind the gpg agent for the ssh authentication socket. 
