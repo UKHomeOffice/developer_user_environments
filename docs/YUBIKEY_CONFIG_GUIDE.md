@@ -474,12 +474,12 @@ $curl https://keybase.io/<username>/<pgppubickey> | gpg2 --import
 ```
 
 ## GPG Config File
-Edit the gpg config file with the settings specified in the github [developer user environments](https://github.com/UKorg/developer_user_environments/blob/dotfiles/.gnupg/gpg.conf)
+Edit the gpg config file with the settings specified in the github [developer user environments](https://github.com/UKHomeOffice/developer_user_environments/blob/master/dotfiles/.gnupg/gpg.conf)
 
 __Note the default key is the long version to avoid collision errors (under general key info, remove 0x).__
 
-##GPG Agent File
-Created the gpg agent config file with the settings specified in the github [developer user environments](https://github.com/UKorg/developer_user_environments/blob/dotfiles/.gnupg/gpg-agent.conf)
+## GPG Agent File
+Created the gpg agent config file with the settings specified in the github [developer user environments](https://github.com/UKHomeOffice/developer_user_environments/blob/master/dotfiles/.gnupg/gpg-agent.conf)
 
 ## Update .bashrc
 Update your user's `~/.bashrc` to bind the gpg agent for the ssh authentication socket. 
