@@ -265,7 +265,9 @@ Q - quit
 
 Your selection? 4
 ```
-You will be asked for the existing admin PIN. Enter a new PIN and set an 8 digit reset PIN. 
+You will be asked for the existing admin PIN. Enter a new PIN, then set the reset PIN to `0000`
+
+> The reset PIN can not be used to retrieve your keys. It is used to reset and wipe the device when returning it to the Home Office.
 
 Quit the passwd menu with Q:
 
