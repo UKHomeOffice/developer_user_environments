@@ -1,5 +1,20 @@
 # Yubikey - GPG and SSH Key Configuration Guidelines
 
+- [Yubikey - GPG and SSH Key Configuration Guidelines](#yubikey---gpg-and-ssh-key-configuration-guidelines)
+  * [Preamble](#preamble)
+  * [Prerequisites](#prerequisites)
+  * [Generate a Key](#generate-a-key)
+  * [Backup](#backup)
+  * [Enabling CCID your YubiKey](#enabling-ccid-your-yubikey)
+  * [Setting your YubiKey PINs](#setting-your-yubikey-pins)
+    + [Changing the admin PIN](#changing-the-admin-pin)
+    + [Changing the user PIN.](#changing-the-user-pin)
+    + [Changing reset PIN.](#changing-reset-pin)
+  * [Personalizing your YubiKey](#personalizing-your-yubikey)
+  * [Importing the key](#importing-the-key)
+  * [GPG Config File](#gpg-config-file)
+  * [Update bashrc;](#update-bashrc)
+
 ## Preamble 
 This is the configuration guidelines for deploying GPG and SSH keys on a Yubikey. It has been validated on [secure development environment - Ubuntu v16.04](https://github.com/UKorg/development_environment). The guidelines are for Yubikey 4 as it supports 4096 bit key length.  
 
@@ -169,7 +184,7 @@ sub  4096R/B4000C55  created: 2014-03-07  expires: 2014-06-15  usage: A
 gpg> Save changes? (y/N) y
 ```
 
-##Backup
+## Backup
 This is a good point to create a backup of your key.
 
 ```shell
@@ -180,7 +195,7 @@ Or you can copy the .gpg folder and tar it.
 
 >Recommendation: All keys are stored away securely (preferably on an external usb).
 
-##Enabling CCID your YubiKey
+## Enabling CCID your YubiKey
 In order for your YubiKey to be a U2F device and behave as a GPG card, you need to put the card into a mode called __'super combo mode'__. This is achieved by the following;
 
 ```shell
@@ -195,7 +210,7 @@ The USB mode will be set to: 0x86
 Commit? (y/n> [n] y
 ```
 
-##Setting your YubiKey PINs
+## Setting your YubiKey PINs
 You need to configure 3 PINs, an 8-digit* admin PIN, an 8-digit* user PIN and an 8-digit* reset PIN.  
 
 The admin PIN is used for administration operations including the changing of the 8-digit user PIN. The user PIN is used to access the GPG key for signing or encryption. The reset PIN is used to reset the user PIN. 
@@ -206,7 +221,7 @@ The admin PIN is used for administration operations including the changing of th
 
 >Recommendation: that the PIN be set to maximum length of 8 digits, using a least 3 of the 4 digit types.
   
-###Changing the admin PIN
+### Changing the admin PIN
 ```shell
 $ gpg2 --card-edit
 gpg/card> admin
@@ -224,7 +239,7 @@ Your selection? 3
 
 A pop dialog will request the YubiKey's existing admin PIN which is `12345678.` Another pop-up will request a new PIN. Enter your new PIN (twice to confirm).
 
-###Changing the user PIN.
+### Changing the user PIN.
 
 ```shell
 1 - change PIN
@@ -238,7 +253,7 @@ Your selection? 1
 
 This time, you'll be asked for the existing user PIN which is `123456.` Enter an new 8 digit PIN.
 
-###Changing reset PIN.
+### Changing reset PIN.
 
 ```shell
 
@@ -266,7 +281,7 @@ Q - quit
 Your selection? Q
 ```
 
-##Personalizing your YubiKey
+## Personalizing your YubiKey
 
 At this stage you can set your name on your GPG key.
 
@@ -303,7 +318,7 @@ Now quit:
 gpg/card> quit
 ```
 
-##Importing the key
+## Importing the key
 Now all the GPG keys can be imported onto the Yubikey.
 
 ```shell
@@ -456,7 +471,7 @@ You can reimport the public gpg key, either from the usb backup or from a public
 $curl https://keybase.io/<username>/<pgppubickey> | gpg2 --import
 ```
 
-##GPG Config File
+## GPG Config File
 Edit the gpg config file with the settings specified in the github [developer user environments](https://github.com/UKHomeOffice/developer_user_environments/blob/master/dotfiles/.gnupg/gpg.conf)
 
 __Note the default key is the long version to avoid collision errors (under general key info, remove 0x).__
@@ -464,8 +479,8 @@ __Note the default key is the long version to avoid collision errors (under gene
 ##GPG Agent File
 Created the gpg agent config file with the settings specified in the github [developer user environments](https://github.com/UKHomeOffice/developer_user_environments/blob/master/dotfiles/.gnupg/gpg-agent.conf)
 
-##Update bashrc;
-Update the bashrc to bind the gpg agent for the ssh authentication socket. 
+## Update .bashrc
+Update your user's `~/.bashrc` to bind the gpg agent for the ssh authentication socket. 
 
 ```shell
 export GPG=gpg2
