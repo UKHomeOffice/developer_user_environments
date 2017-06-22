@@ -33,7 +33,7 @@ Where "01 00 05" means version 1.0.5.
 >Skip this step if you already have a key. It is assumed that the GPG private and public key are available in the environment. 
 
 ```shell
-$gpg2 --gen-key
+$gpg2 --full-gen-key
 RSA keys may be between 1024 and 4096 bits long.
 What keysize do you want? (2048) 4096		
 
@@ -124,6 +124,10 @@ Please select what kind of key you want:
    (6) RSA (encrypt only)
    (7) DSA (set your own capabilities)
    (8) RSA (set your own capabilities)
+   (10) ECC (sign only)
+   (11) ECC (set your own capabilities)
+   (12) ECC (encrypt only)
+   (13) Existing key
 Your selection? 8
 ```
 Here we select 8 to get another RSA key attached to our key.
